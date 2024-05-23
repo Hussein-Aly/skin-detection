@@ -6,7 +6,6 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
-/data/sfa/
 **/.ipynb_checkpoints/
 /.idea/
 **/__pycache__/
