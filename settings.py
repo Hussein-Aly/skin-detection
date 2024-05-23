@@ -1,0 +1,14 @@
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASE_DIR, 'data', 'sfa')
+
+NUM_TRAIN_SKIN = 46541
+NUM_TRAIN_NOT_SKIN = 79200
+NUM_TEST_SKIN = 11880
+NUM_TEST_NOT_SKIN = 19800
+NUM_VAL_SKIN = 1951
+NUM_VAL_NOT_SKIN = 1620
+
+BATCH_SIZE = 128
+NUM_EPOCHS = 100
