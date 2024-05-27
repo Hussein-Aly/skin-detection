@@ -1,8 +1,8 @@
 from PIL import Image
 from torch.utils.data import Dataset
-from torchvision.transforms import Lambda, ToTensor, Compose
+from torchvision.transforms import Lambda, ToTensor, Compose, Resize
 
-from utils.data_augmentation import pad_tensor
+from utils.data_augmentation import pad_tensor_to_square
 
 
 class BaseDataset(Dataset):
@@ -11,7 +11,8 @@ class BaseDataset(Dataset):
         self.target = target
         self.transform = Compose([
             ToTensor(),
-            Lambda(lambda tensor: pad_tensor(tensor))
+            Resize(size=(25, 25)),
+            Lambda(lambda tensor: pad_tensor_to_square(tensor, max_dim=25))
         ])
 
     def __len__(self):
